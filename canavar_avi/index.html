@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canavar Avı</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div id="game">
+
+    <section class="row">
+        <div class="small-6 columns">
+            <h1 class="text-center">SEN</h1>
+            <div class="healthbar">
+                <div :style="user_progress" class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
+                	{{ player_health }}%
+                </div>
+            </div>
+        </div>
+        <div class="small-6 columns">
+            <h1 class="text-center">CANAVAR</h1>
+            <div class="healthbar">
+                <div :style="monster_progress" class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
+                	{{ monster_health }}%
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row controls" v-if="!game_is_on">
+        <div class="small-12 columns">
+            <button id="start-game" @click="start_game">YENİ OYUN</button>
+        </div>
+    </section>
+    <section class="row controls" v-if="game_is_on">
+        <div class="small-12 columns">
+            <button id="attack" @click="attack">SALDIRI</button>
+            <button id="special-attack" @click="special_attack">ÖZEL SALDIRI</button>
+            <button id="heal" @click="health_up">İLK YARDIM</button>
+            <button id="give-up" @click="give_up">PES ET!</button>
+        </div>
+    </section>
+    <section class="row log" v-if="logs.length > 0">
+        <div class="small-12 columns">
+            <ul>
+                <li v-for="log in logs" :class="{ 'player-turn': log.turn === 'p', 'monster-turn': log.turn === 'm' }">
+                	{{ log.text }}
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+	new Vue({
+		el: "#game",
+		data: {
+			player_health: 100,
+			monster_health: 100,
+			game_is_on: false,
+			attack_multiple: 10,
+			special_attack_multiple: 15,
+			monster_attack_multiple: 15,
+			health_up_multiple: 20,
+			logs: []
+		},
+		methods: {
+			start_game: function () {
+				this.player_health = 100;
+				this.monster_health = 100;
+				this.game_is_on = true;
+				this.logs = [];
+				alert("game started!");
+			},
+			attack: function () {
+				let point = Math.ceil(Math.random() * this.attack_multiple);
+				this.monster_health -= point;
+				this.add_to_log({turn: "p", text: "Oyuncu Saldırısı! ("+point+")"});
+				this.monster_attack();
+			},
+			special_attack: function () {
+				let point = Math.ceil(Math.random() * this.special_attack_multiple);
+				this.monster_health -= point;
+				this.add_to_log({turn: "p", text: "Özel Oyuncu Saldırısı! ("+point+")"});
+				this.monster_attack();
+			},
+			health_up: function () {
+				let point = Math.ceil(Math.random() * this.health_up_multiple);
+				this.player_health += point;
+				this.add_to_log({turn: "p", text: "Oyuncu Can Yeniledi! ("+point+")"});
+				this.monster_attack();				
+			},
+			give_up: function () {
+				this.player_health = 100;
+				this.monster_health = 100;
+				this.game_is_on = false;
+				this.logs = [];
+				this.add_to_log({turn: "p", text: "Oyuncu Pes Etti! ("+point+")"});
+			},
+			monster_attack: function () {
+				let point = Math.ceil(Math.random() * this.monster_attack_multiple);
+				this.player_health -= point;
+				this.add_to_log({turn: "m", text: "Canavar Saldırısı! ("+point+")"});
+			},
+			add_to_log: function (log) {
+				this.logs.push(log);
+			}
+		},
+		watch: {
+			player_health: function (val) {
+				if(val<=0) {
+					this.player_health = 0;
+					if(confirm("Oyunu kaybettin! Tekrar dene?")) {
+						this.start_game();
+					}
+				} else if(val>=100) {
+					this.player_health = 100;
+				}
+			},
+			monster_health: function (val) {
+				if(val<=0) {
+					this.monster_health = 0;
+					if(confirm("Oyunu kazandın! Tekrar dene?")) {
+						this.start_game();
+					}					
+				} else if(val>=100) {
+					this.monster_health = 100;
+				}
+			}
+		},
+		computed: {
+			user_progress: function () {
+				return {
+					width: this.player_health + '%'
+				}
+			},
+			monster_progress: function () {
+				return {
+					width: this.monster_health + '%'
+				}
+			},
+		}
+	})
+</script>
+
+</body>
+</html>

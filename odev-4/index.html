@@ -1,0 +1,125 @@
+<style type="text/css">
+	#effect {
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+	}
+
+	.highlight {
+	  	background-color: red;
+		  width: 200px !important;
+	}
+
+	.shrink {
+		  background-color: gray;
+		  width: 50px !important;
+	}
+
+	.box {
+		width: 100px;
+		height: 100px;
+	}
+
+	.blue {
+		background-color: blue;
+	}
+
+	.red {
+		background-color: red;
+		
+	}
+
+	.yellow {
+		background-color: yellow;
+	}
+
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="exercise">
+  <!-- 1) Efekti Butona basarak başlatın. Efekt "highlight" ve/veya "shrink" class'ları arasında değişmelidir. Bu değişim her bir interval döngüsünde olmalıdır. ("effect" id' li div'e o anki aktif olan class eklenecektir.) -->
+  <div>
+    <button @click="startEffect">Efekti Başlat!</button>
+    <div id="effect" :class="efekt"></div>
+  </div>
+  <!-- 2) Birkaç tane CSS Class'ı üreterek bu Class'ları Array Syntax'ı ile aşağıdaki <div>' e ekleyiniz -->
+  <div :class="['box', 'red']">Artık bir kaç class'ım var :)</div>
+  <!-- 3) Örnek birkaç tane Class üreterek (Ya da ürettiklerinizi kullanarak) <input> içerisine Class adı girerek hemen alttaki <div> elementine bu yazılan Class'ı eklemeyi yapınız. -->
+  <div>
+    <input type="text" @keyup="handleKeyChange">
+    <div :class="['box', subclass]">Bana bak</div>
+  </div>
+  <!-- 4) Kullanıcının Class isimlerini girebileceği iki adet <input> elementimiz var. Bunları kullanarak hemen alttaki <div> elementinin Class'larini attached etmesini sağlayınız  -->
+  <div>
+    <input type="text" @keyup.enter="handleAddClass1">
+    <input type="text" @keyup.enter="handleAddClass2">
+    <div :class="[class1, class2]">İki sınıf</div>
+  </div>
+  <!-- 5) 3.Uygulamayı tekrarlayın. Fakat bu sefer Class Adı yerine Denk gelecek Style Kodlarını ekleyiniz.  -->
+  <div>
+    <input type="text" v-model="color">
+    <div :style="customStyle">Renk</div>
+  </div>
+  <!-- 6) setInterval ve Style Binding kullanarak Basit bir progress bar üretin. Progress bar' ın çalışmasını buton'a basarak başlatın. -->
+  <div>
+    <button v-on:click="startProgress">Progress İşlemini Başlat!</button>
+    <div :style="[progress, {backgroundColor: 'red'}]"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	new Vue({
+		el: "#exercise",
+		data: {
+			efekt: "shrink",
+			subclass: "",
+			class1: "",
+			class2: "",
+			color: "green",
+			progress: {
+				width: "0px",
+				height: "40px"
+			}
+		},
+		methods: {
+			startEffect: function () {
+				virt = this;
+				setInterval(function () {
+					virt.efekt = (virt.efekt==="shrink") ? "highlight" : "shrink";
+				},1000);
+			},
+			startProgress: function () {
+				
+			},
+			handleKeyChange: function (e) {
+				this.subclass = e.target.value;
+			},
+			handleAddClass1: function (e) {
+				this.class1 = e.target.value;
+			},
+			handleAddClass2: function (e) {
+				this.class2 = e.target.value;
+			},
+			handleAddStyle: function (e) {
+				this.color = e.target.value;
+			},
+			startProgress: function () {
+				virt = this;
+				value = 0;
+				setInterval(function () {
+					value = (value <= 100) ? value + 5 : 0;
+					virt.progress.width = value + "px";
+				}, 600);
+			}
+		},
+		computed: {
+			customStyle: function () {
+				return {
+					backgroundColor: this.color
+				}
+			}
+		}
+	});
+</script>

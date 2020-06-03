@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="exercise">
+   <!-- 1) Interpolation yani {{}} Syntax'ını kullanarak <p> elementinin içeriğini Name ve Age verileriyle doldurun-->
+    <p>VueJS Muazzam bir Framework - {{ name }} ({{ age }})</p>
+    <!-- 2) Yaşınızı 5 ile çarpıp <p> içerisinde yazdırınız -->
+    
+    <p>{{ age_x_five() }}</p>
+
+    <!-- 3) Fonksiyon çağırarak 0 ile 1 arasında bir sayı üretip <p> içerisinde yazdırınız (Math.random()) -->
+    <p>{{ random_0_1() }}</p>
+
+    <!-- 4) Google üzerinden bulacağınız herhangi bir fotoğrafı <img> elementinde gösterme işlemini yapınızı. Bunu yaparken "src" attribute' una bind etmeyi unutmayınız -->
+    <img v-bind:src="minion" />
+    <!-- 5) Name değişkeninin değerinin <input /> içine yazdığınız değer ile anlık olarak değiştirilmesini sağlayınız. ("value" attribute kullanarak) -->
+    <div>
+    	<p v-once>{{ text }}</p>
+    	<p>{{ text }}</p>
+        <input type="text" v-on:input="handleChange">
+    </div>
+    <script type="text/javascript">
+    	new Vue({
+    		el: "#exercise",
+    		data: {
+    			name: "Güven Topal",
+    			age: 31,
+    			minion: "https://i.pinimg.com/564x/c6/de/4f/c6de4fbc92c32c25dd90c41884968d63.jpg",
+    			text: "yazınız...."
+    		},
+    		methods: {
+    			age_x_five: function () {
+    				return this.age*5;
+    			},
+    			random_0_1: function () {
+    				return Math.random(0,1);
+    			},
+    			handleChange: function (e) {
+    				this.text = e.target.value;
+    			}
+    		}
+    	})
+    </script>
+</div>
+</body>
+</html>

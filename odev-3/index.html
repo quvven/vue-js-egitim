@@ -1,0 +1,47 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="exercise">
+    <!-- 1) value isimli property'nin değerine bakarak result için bir reactive kod yazınız. 
+    
+    Süreç ise  value 33'e eşit olmadığı durumlarda <p> elementinin içinde  "Henüz Bitmedi!!" 33 olduğunda ise "Tamamlandı" yazmalıdır.. 
+    
+    Bunun için gördüğünüz reactivity türlerinden birini kullanınız. (Not : Butonlar yardımıyla value property'nin değerini değiştirebilirsiniz ))   -->
+    <div>
+        <p>Şuanki Değer: {{ value }}</p>
+        <button @click="value+=5">Add 5</button>
+        <button @click="value+=1">Add 1</button>
+        <p>{{ result }}</p>
+    </div>
+    <!-- 2) result property' değerini izleyerek 5 saniye sonra value'nun değerini sıfırlayınız. (ipucu: setTimeout(..., 5000) kullanılabilir.-->
+    <div>
+        <input type="text" @change="handleChange">
+        <p>{{ value }}</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    new Vue({
+        el: "#exercise",
+        data: {
+            value: 0,
+        },
+        methods: {
+            handleChange: function (e) {
+                this.value = e.target.value;
+            }
+        },
+        computed: {
+            result: function () {
+                return (this.value<33) ? "Henüz Bitmedi!!" : "Tamamlandı";
+            }
+        },
+        watch: {
+            result: function () {
+                self = this;
+                setTimeout(function () {
+                    self.value = 0;
+                },5000);
+            }
+        }
+    });
+</script>
