@@ -34,10 +34,10 @@ Eğitim boyunca yapılan uygulamalar...
 ✅ Component'ler Arası İletişim
 13 ders
 
-❌ Gelişmiş Component Kullanımı
+✅ Gelişmiş Component Kullanımı
 13 ders
 
-❌ Proje | Ürün Ekleme Uygulaması
+✅ Proje | Ürün Ekleme Uygulaması
 12 ders
 
 ❌ Input ve Form Elementleriye Çalışmak
