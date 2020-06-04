@@ -2,13 +2,16 @@
 
 [Sıfırdan İleri Seviye Vue.JS Eğitimi ve Uygulama Geliştirme](https://www.udemy.com/course/sifirdan-ileri-seviye-vuejs-2-vuex-vue-router-egitim-seti/)
 
+Eğitmen: Gökhan Kandemir
+
 Eğitim boyunca yapılan uygulamalar...
 
 ---
 
 **Bölümler;**
 
-
+✅ Başlangıç
+9 ders
 
 ✅ Vue.js ile DOM Etkileşimleri
 26 ders
@@ -19,16 +22,16 @@ Eğitim boyunca yapılan uygulamalar...
 ✅ İlk Proje | Canavar Avı Oyunu
 13 ders
 
-❌ VueJS Instance Nedir? Kavrayalım
+✅ VueJS Instance Nedir? Kavrayalım
 16 ders
 
-❌ Webpack ve Vue CLI ile Gerçek Geliştirme Ortamına Geçiş
+✅ Webpack ve Vue CLI ile Gerçek Geliştirme Ortamına Geçiş
 11 ders
 
-❌ Component Yapısına Giriş
+✅ Component Yapısına Giriş
 12 ders
 
-❌ Component'ler Arası İletişim
+✅ Component'ler Arası İletişim
 13 ders
 
 ❌ Gelişmiş Component Kullanımı
