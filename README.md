@@ -40,10 +40,10 @@ Eğitim boyunca yapılan uygulamalar...
 ✅ Proje | Ürün Ekleme Uygulaması
 12 ders
 
-❌ Input ve Form Elementleriye Çalışmak
+✅ Input ve Form Elementleriye Çalışmak
 14 ders
 
-❌ Directive Kullanımı
+✅ Directive Kullanımı
 13 ders
 
 ❌ Filters ve Mixins Kullanımı
