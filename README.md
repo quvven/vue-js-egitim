@@ -46,10 +46,10 @@ Eğitim boyunca yapılan uygulamalar...
 ✅ Directive Kullanımı
 13 ders
 
-❌ Filters ve Mixins Kullanımı
+✅ Filters ve Mixins Kullanımı
 11 ders
 
-❌ Animasyonlar ve Geçişler (Animations & Transitions)
+✅ Animasyonlar ve Geçişler (Animations & Transitions)
 23 ders
 
 ❌ Proje | Poğaça Nerede Hafıza Oyunu
