@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+	<div class="container">
+		<div class="content">
+			<div :class="image">
+
+			</div>
+		</div>
+		<div class="control">
+			<div class="slider">
+				<div class="slider-area" v-on:mousemove="move"  v-on:click="moveto"></div>
+				<div class="slider-line"></div>
+				<div class="slider-point" :style="position"></div>
+			</div>
+		</div>
+	</div>
+	<p>
+		{{position}}
+	</p>
+	<p>
+		{{image}}
+	</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

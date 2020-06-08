@@ -52,13 +52,13 @@ Eğitim boyunca yapılan uygulamalar...
 ✅ Animasyonlar ve Geçişler (Animations & Transitions)
 23 ders
 
-❌ Proje | Poğaça Nerede Hafıza Oyunu
+✅ Proje | Poğaça Nerede Hafıza Oyunu
 19 ders
 
-❌ HTTP ile Sunucuya Bağlanmak | vue-resource
+✅ HTTP ile Sunucuya Bağlanmak | vue-resource
 14 ders
 
-❌ VueJS ile Routing İşlemi
+✅ VueJS ile Routing İşlemi
 28 ders
 
 ❌ Vuex ile Daha iyi bir State Yönetimi
