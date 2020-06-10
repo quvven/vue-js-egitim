@@ -61,25 +61,25 @@ Eğitim boyunca yapılan uygulamalar...
 ✅ VueJS ile Routing İşlemi
 28 ders
 
-❌ Vuex ile Daha iyi bir State Yönetimi
+✅ Vuex ile Daha iyi bir State Yönetimi
 25 ders
 
-❌ Proje | Ürün İşlemleri Uygulaması
+✅ Proje | Ürün İşlemleri Uygulaması
 32 ders
 
-❌ Vue.js Uygulamasını Hosting, Sunucu ve Amazon S3 Üzerine Deploy Etmek
+✅ Vue.js Uygulamasını Hosting, Sunucu ve Amazon S3 Üzerine Deploy Etmek
 5 ders
 
-❌ Input Tag Component Yapımı ve NPM üzerinde Yayınlamak
+✅ Input Tag Component Yapımı ve NPM üzerinde Yayınlamak
 14 ders
 
-❌ Vue-Resource Yerine Axios Kullanımı
+✅ Vue-Resource Yerine Axios Kullanımı
 11 ders
 
-❌ Yandex Translate API ile Online Çeviri Yapımı | Vue-Translator
+✅ Yandex Translate API ile Online Çeviri Yapımı | Vue-Translator
 10 ders
 
-❌ Vuelidate ile Form Verilerinizi Kontrol Edin
+✅ Vuelidate ile Form Verilerinizi Kontrol Edin
 16 ders
 
 ❌ Vue Uygulaması ile Auth İşlemleri
