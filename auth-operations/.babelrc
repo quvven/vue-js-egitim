@@ -1,0 +1,14 @@
+// {
+//     "plugins": ["transform-object-rest-spread"]
+// }
+// npm install --save babel-plugin-transform-object-rest-spread
+// ...object_assing error fixed,
+
+// or
+
+{
+    "presets": [
+        ["env", { "modules": false }],
+            "stage-3"
+        ]
+}

@@ -82,8 +82,8 @@ Eğitim boyunca yapılan uygulamalar...
 ✅ Vuelidate ile Form Verilerinizi Kontrol Edin
 16 ders
 
-❌ Vue Uygulaması ile Auth İşlemleri
+✅ Vue Uygulaması ile Auth İşlemleri
 22 ders
 
-❌ Yolun Sonu
+✅ Yolun Sonu
 2 ders
